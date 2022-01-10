@@ -1,7 +1,7 @@
 #include "AttackItem.h"
 #include "Utility.h"
 
-AttackItem::AttackItem(int boost) : Item("attack item", boost) {}
+AttackItem::AttackItem() : Item("attack item", 10) {}
 
 void AttackItem::use(Character* character)
 {

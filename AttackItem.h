@@ -2,7 +2,7 @@
 
 struct AttackItem : Item
 {
-    AttackItem(int boost);
+    AttackItem();
     void use(Character* character) override;
 };
 

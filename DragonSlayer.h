@@ -12,5 +12,5 @@ struct DragonSlayer : Character
     
 private:
     const std::string name;
-    AttackItem attackItem(10);
+    std::unique_ptr<AttackItem> attackItem(new AttackItem());
 };
