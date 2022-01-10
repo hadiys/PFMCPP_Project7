@@ -3,8 +3,19 @@
 #include "Utility.h"
 
 //DragonSlayer::DragonSlayer
+DragonSlayer::DragonSlayer(std::string name_, int hitPoints, int armor) 
+        : name(name_), Character(hitPoints, armor, 4) 
+{
+    helpfulItems = makeHelpfulItems(2);
+    defensiveItems = makeDefensiveItems(3);
+}
+
 
 //DragonSlayer::getName
+const std::string& DragonSlayer::getName()
+{
+    return name;
+}
 
 void DragonSlayer::attack(Character& other)
 {
@@ -17,6 +28,9 @@ void DragonSlayer::attack(Character& other)
         //note: they should only use the item if the dragon's hitpoints are > 0...
         //note: items are single-use only, so you need to reset it after use.  
         //look in the Character class for how the other item types are reset after use.
+        if(dragon->getHP() > 0)
+            attackItem.use(this);
+            
         while( dragon->getHP() > 0 )
         {
             dragon->takeDamage(attackDamage);
