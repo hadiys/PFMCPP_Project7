@@ -4,7 +4,7 @@
 
 //Dragon::Dragon
 Dragon::Dragon(std::string name_, int hitPoints, int armor) 
-        : name(name_), Character(hitPoints, armor, 80) { } 
+        : Character(hitPoints, armor, 80), name(name_) { }
 
 void Dragon::attack(Character &other)
 {

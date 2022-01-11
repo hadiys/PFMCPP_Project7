@@ -1,7 +1,7 @@
 #pragma once
 #include "Character.h"
 
-struct Paladin : Character
+struct Paladin : public Character
 {
     Paladin(std::string name_, int hitPoints, int armor);
     

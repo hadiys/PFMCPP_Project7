@@ -3,7 +3,7 @@
 
 //Dwarf::Dwarf
 Dwarf::Dwarf(std::string name_, int hitPoints, int armor) 
-    : name(name_), Character(hitPoints, armor, 4)
+    : Character(hitPoints, armor, 4), name(name_)
 {
     helpfulItems = makeHelpfulItems(6);
     defensiveItems = makeDefensiveItems(4);

@@ -1,8 +1,8 @@
 #pragma once
 #include "Character.h"
-#include "Utility.h"
+#include "AttackItem.h"
 
-struct DragonSlayer : Character
+struct DragonSlayer : public Character
 {
     DragonSlayer(std::string name_, int hitPoints, int armor);
     
@@ -12,5 +12,5 @@ struct DragonSlayer : Character
     
 private:
     const std::string name;
-    std::unique_ptr<AttackItem> attackItem(new AttackItem());
+    std::unique_ptr<AttackItem> attackItem {new AttackItem()};
 };
