@@ -113,3 +113,12 @@ void useAttackItem(Character* character, Item* item)
     }
 }
 
+void boostAndUpdateStats(std::unique_ptr<int>& initialStat, int& stat, float factor)
+{
+    if(stat < *initialStat)
+    {
+        stat = *initialStat;
+    }
+    stat += stat * factor;
+    *initialStat = stat;
+}
