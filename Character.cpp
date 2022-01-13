@@ -1,7 +1,6 @@
 #include "Character.h"
 #include "DefensiveItem.h"
 #include "HelpfulItem.h"
-#include "Utility.h"
 
 Character::Character(int hp, int armor_, int attackDamage_ ) :
     hitPoints(hp),
@@ -84,7 +83,6 @@ int Character::takeDamage(int damage)
     return hitPoints;
 }
 
-
 //#include <cassert>
 void Character::attackInternal(Character& other)
 {
@@ -96,9 +94,9 @@ void Character::attackInternal(Character& other)
             b) your stats are boosted 10%
             c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
       */
-        boostAndUpdateStats(initialHitPoints, hitPoints,0.1f);
-        boostAndUpdateStats(initialArmorLevel, armor,0.1f);
-        boostAndUpdateStats(initialAttackDamage, attackDamage, 0.1f);
+        boostAndUpdateStats(*initialHitPoints, hitPoints);
+        boostAndUpdateStats(*initialArmorLevel, armor);
+        boostAndUpdateStats(*initialAttackDamage, attackDamage);
         
         //assert(false);
         std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;        
@@ -116,4 +114,14 @@ void Character::printStats()
     
     std::cout << std::endl;
     std::cout << std::endl;
+}
+
+void boostAndUpdateStats(int& initialStat, int& stat)
+{
+    if(stat < initialStat)
+    {
+        stat = initialStat;
+    }
+    stat += stat * 0.1f;
+    initialStat = stat;
 }

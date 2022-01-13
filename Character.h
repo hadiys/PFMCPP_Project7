@@ -74,3 +74,5 @@ private:
     
     void attackInternal(Character& other);
 };
+
+void boostAndUpdateStats(int& initialStat, int& stat);

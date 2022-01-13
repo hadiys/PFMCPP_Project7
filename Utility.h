@@ -14,4 +14,4 @@ void useDefensiveItem(Character*, Item&);
 void useHelpfulItem(Character*, Item*);
 void useAttackItem(Character*, Item*);
 
-void boostAndUpdateStats(std::unique_ptr<int>& initialStat, int& stat, float factor);
+//void boostAndUpdateStats(std::unique_ptr<int>& initialStat, int& stat, float factor);
