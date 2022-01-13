@@ -1,9 +1,7 @@
 #pragma once
-
 #include <vector>
 #include <memory>
 #include "Item.h"
-
 
 std::vector<std::unique_ptr<Item>> makeHelpfulItems(int num);
 
@@ -15,3 +13,5 @@ std::string getCharacterStats(Character* ch);
 void useDefensiveItem(Character*, Item&);
 void useHelpfulItem(Character*, Item*);
 void useAttackItem(Character*, Item*);
+
+//void boostAndUpdateStats(std::unique_ptr<int>& initialStat, int& stat, float factor);

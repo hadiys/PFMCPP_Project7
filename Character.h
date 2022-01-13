@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <vector>
 #include <memory>
@@ -22,6 +21,8 @@ struct Character
     
     virtual void attack( Character& other );
     void defend();
+
+    void printStats();
     
     void help( Character& other );
     
@@ -53,14 +54,15 @@ struct Character
         std::cout << getName() << "'s attack damage level has been boosted to " << attackDamage << std::endl;
     }
 
-    void printStats()
+    /*void printStats()
     {
         std::cout << getName() << "'s stats: " << std::endl;
         std::cout << getStats(); //make your getStats() use a function from the Utility.h
         
         std::cout << std::endl;
         std::cout << std::endl;
-    }
+    }*/
+
 protected:
     std::vector<std::unique_ptr<Item>> defensiveItems;
     std::vector<std::unique_ptr<Item>> helpfulItems;
@@ -72,3 +74,5 @@ private:
     
     void attackInternal(Character& other);
 };
+
+void boostAndUpdateStats(int& initialStat, int& stat);
